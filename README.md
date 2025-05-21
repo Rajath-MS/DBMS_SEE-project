@@ -70,16 +70,20 @@ View Transaction History: Check your transaction history for a detailed log of a
 
 🤝 Contributors
 Rajath M S (1RUA24CSE0354) -Frontend Developer
+
 Pratham Datta (1RUA24CSE0324) - Backend Developer, API Integration
+
 Preetham Gowda GN (1RUA24CSE0330) - DataBase Connection Manager
 
 Prof. Arathi B N - Project Guide, Assistant Professor, School of CSE, RV University
+
 📬 Contact
 For any queries or feedback, reach out to us at:
 
 Email: rajathmsbtech24@rvu.edu.in 
 
 🙏Acknowledgments
+
 Thanks to RV University for providing the opportunity to work on this project.
 Gratitude to the CoinGecko team for their free API, which powers the live price data.
 Appreciation for the open-source community for tools like Chart.js and PHP.
