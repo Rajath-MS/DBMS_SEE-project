@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 session_start(); // Start session for caching
 
 // Connect to your database
-$mysqli = new mysqli('localhost', 'root', 'Rajath@813733652065', 'crypto_db');
+$mysqli = new mysqli('localhost', 'root', '', 'crypto_db');
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
