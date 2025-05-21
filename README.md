@@ -44,14 +44,12 @@ Create a new database named crypto_db.
 Import the database.sql file (located in the sql/ folder) to set up the required tables:
 sql
 
-Copy
 Users, Wallets, Cryptocurrencies, WalletCryptos, Transactions, Settings
 Configure the Database Connection:
 Open config.php in the project root.
 Update the database credentials (host, username, password, database name) to match your setup:
 php
 
-Copy
 $host = 'localhost';
 $username = 'root';
 $password = '';
