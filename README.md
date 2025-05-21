@@ -72,6 +72,7 @@ View Transaction History: Check your transaction history for a detailed log of a
 Rajath M S (1RUA24CSE0354) -Frontend Developer
 Pratham Datta (1RUA24CSE0324) - Backend Developer, API Integration
 Preetham Gowda GN (1RUA24CSE0330) - DataBase Connection Manager
+
 Prof. Arathi B N - Project Guide, Assistant Professor, School of CSE, RV University
 📬 Contact
 For any queries or feedback, reach out to us at:
