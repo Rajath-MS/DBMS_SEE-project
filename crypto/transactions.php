@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'crypto_db';
 $user = 'root';        // Change to your DB user
-$pass = 'Rajath@813733652065';    // Change to your DB password
+$pass = '';    // Change to your DB password
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
