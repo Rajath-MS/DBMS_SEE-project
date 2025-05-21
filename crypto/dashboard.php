@@ -13,7 +13,7 @@ ini_set('display_errors', 1);
 $host = 'localhost';
 $db = 'crypto_db';
 $user = 'root';
-$pass = 'Rajath@813733652065';
+$pass = '';
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
