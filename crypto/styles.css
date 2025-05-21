@@ -1,0 +1,814 @@
+/* styles.css - Comprehensive fixes for responsiveness and UI */
+
+/* Global Styles */
+:root {
+  --primary-color: #6c5ce7;
+  --primary-light: #8075e7;
+  --primary-dark: #564bc2;
+  --secondary-color: #00cec9;
+  --accent-color: #fd79a8;
+  --background-color: #f5f6fa;
+  --card-bg: #ffffff;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-light: #b2bec3;
+  --border-color: #e2e2e2;
+  --success-color: #00b894;
+  --danger-color: #d63031;
+  --warning-color: #fdcb6e;
+  --info-color: #0984e3;
+  --bitcoin-color: #f7931a;
+  --ethereum-color: #627eea;
+  --solana-color: #00ffbd;
+  --other-crypto-color: #8c7ae6;
+  --sidebar-width: 250px;
+  --header-height: 70px;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--card-bg);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 24px 0;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-bottom: 4px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-nav a:hover {
+  background-color: rgba(108, 92, 231, 0.05);
+  color: var(--primary-color);
+}
+
+.sidebar-nav li.active a {
+  color: var(--primary-color);
+  background-color: rgba(108, 92, 231, 0.1);
+  font-weight: 600;
+  border-left: 3px solid var(--primary-color);
+}
+
+.sidebar-footer {
+  padding: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.user-info p {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 24px;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.search-bar {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 400px;
+  box-shadow: var(--box-shadow);
+}
+
+.search-bar i {
+  color: var(--text-light);
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  flex: 1;
+  outline: none;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Section Styles */
+section {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--box-shadow);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.time-filter {
+  display: flex;
+  gap: 4px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 4px;
+}
+
+.time-filter button {
+  border: none;
+  background: transparent;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.time-filter button.active {
+  background-color: var(--card-bg);
+  color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Portfolio & Chart Container */
+.portfolio-chart-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+/* Portfolio Summary */
+.portfolio-summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-value {
+  margin-bottom: 24px;
+}
+
+.value-card {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180"><path d="M0,180 L180,180 L180,0 Z" fill="rgba(255,255,255,0.05)"/></svg>')
+    no-repeat;
+  transform: rotate(0deg);
+}
+
+.value-card h3 {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.value-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.value-card .change {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  width: fit-content;
+}
+
+.portfolio-distribution {
+  padding-top: 24px;
+}
+
+.portfolio-distribution h3 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.distribution-chart {
+  height: 180px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.distribution-chart::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+}
+
+.distribution-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.color-dot.btc {
+  background-color: var(--bitcoin-color);
+}
+
+.color-dot.eth {
+  background-color: var(--ethereum-color);
+}
+
+.color-dot.sol {
+  background-color: var(--solana-color);
+}
+
+.color-dot.other {
+  background-color: var(--other-crypto-color);
+}
+
+/* Chart Section */
+.chart-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+.chart-selector {
+  position: relative;
+}
+
+.chart-selector select {
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+}
+
+.chart-selector.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--text-light);
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.crypto-price-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.price-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.crypto-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.price-header h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.symbol {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.price-value {
+  text-align: right;
+}
+
+.price-value h2 {
+  font-size: 1.75rem;
+  margin-bottom: 4px;
+}
+
+.price-chart-container {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.price-chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+.price-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.price-stats .stat {
+  background-color: #f8f9fb;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.price-stats .label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.price-stats .value {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Top Cryptocurrencies */
+.crypto-table-container {
+  overflow-x: auto;
+}
+
+.crypto-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.crypto-table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.crypto-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.crypto-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.crypto-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.crypto-name img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.crypto-name .symbol {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.action-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  padding: 6px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Recent Transactions */
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #f8f9fb;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.transaction-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.transaction-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.transaction-icon.buy {
+  background-color: rgba(0, 184, 148, 0.1);
+  color: var(--success-color);
+}
+
+.transaction-icon.sell {
+  background-color: rgba(214, 48, 49, 0.1);
+  color: var(--danger-color);
+}
+
+.transaction-icon.transfer {
+  background-color: rgba(9, 132, 227, 0.1);
+  color: var(--info-color);
+}
+
+.transaction-details h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.transaction-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.transaction-amount {
+  text-align: right;
+}
+
+.transaction-amount .amount {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.transaction-amount .usd-value {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--box-shadow);
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+
+/* Error and Status Styles */
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.api-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-dot.connecting {
+  background-color: var(--warning-color);
+}
+.status-dot.connected {
+  background-color: var(--success-color);
+}
+.status-dot.error {
+  background-color: var(--danger-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .portfolio-chart-container {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-chart-container section {
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .price-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-width);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: none;
+  }
+
+  .price-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-selector select {
+    width: 100%;
+  }
+}
